@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "@/widget/Layout";
+import Judul from "@/components/Judul";
 
 const UbahBuku = () => {
   return (
@@ -7,9 +8,7 @@ const UbahBuku = () => {
       <div className="flex justify-center mx-2 mt-10">
         <div className="w-[550px] rounded-lg shadow-gray-200 shadow-lg p-10">
           {/* judul */}
-          <div className="mb-5">
-            <h3 className="text-2xl font-bold">Form Ubah Buku</h3>
-          </div>
+          <Judul title="Form Ubah Buku" />
           {/* form tambah */}
           <form>
             <div className="mb-3">
