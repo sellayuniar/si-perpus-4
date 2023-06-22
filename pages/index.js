@@ -22,8 +22,8 @@ export default function Home() {
     router.push("/tambah-buku");
   };
 
-  const updateBookHandler = () => {
-    router.push("/ubah-buku");
+  const updateBookHandler = (id) => {
+    router.push(`/ubah-buku/${id}`);
   };
 
   const bukuCollectionRef = collection(db, "buku");
@@ -46,17 +46,19 @@ export default function Home() {
     }
   };
 
-  //API
+  // API;
   // const getBukuList = async () => {
   //   try {
   //     const response = await fetch(`https://ekadyar.com/rest/book/list`, {
+  //       mode: "cors",
+  //       method: "GET",
   //       headers: {
   //         "Content-Type": "application/json",
   //       },
   //     });
   //     const data = await response.json();
   //     setBuku(data);
-  //     console.log();
+  //     console.log(data);
   //   } catch (err) {
   //     console.log(err);
   //   }
@@ -108,7 +110,7 @@ export default function Home() {
                     <td className="flex px-6 py-3">
                       <span
                         onClick={() => {
-                          updateBookHandler();
+                          updateBookHandler(data.id);
                         }}
                         className="cursor-pointer h-8 w-8 mr-2 hover:text-sky-500"
                       >
